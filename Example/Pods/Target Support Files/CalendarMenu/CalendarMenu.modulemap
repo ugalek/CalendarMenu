@@ -1,0 +1,6 @@
+framework module CalendarMenu {
+  umbrella header "CalendarMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

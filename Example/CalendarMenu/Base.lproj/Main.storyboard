@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CalendarMenu_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-MW-nqm" customClass="CalendarMenu" customModule="CalendarMenu">
+                                <rect key="frame" x="26" y="519" width="323" height="138"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-JI-wBP">
+                                <rect key="frame" x="26" y="316" width="323" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fwg-JI-wBP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="33G-PD-ml7"/>
+                            <constraint firstItem="hXK-MW-nqm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="bqo-58-JKQ"/>
+                            <constraint firstItem="fwg-JI-wBP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="316" id="d2d-XM-6VY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hXK-MW-nqm" secondAttribute="trailing" constant="10" id="hEO-pJ-Vd4"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hXK-MW-nqm" secondAttribute="bottom" constant="10" id="rkS-Vf-FQj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fwg-JI-wBP" secondAttribute="trailing" constant="10" id="tvq-2U-TVp"/>
+                            <constraint firstItem="hXK-MW-nqm" firstAttribute="top" secondItem="fwg-JI-wBP" secondAttribute="bottom" constant="169" id="yT4-6I-4PR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cMenu" destination="hXK-MW-nqm" id="ele-qm-gDm"/>
+                        <outlet property="dateField" destination="fwg-JI-wBP" id="vB4-YJ-wpk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="134"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  CalendarMenu
+
+  Copyright © 2019 Galina FABIO. All rights reserved.
+*/
+
+"Day" = "Day";
+"Week" = "Week";
+"Month" = "Month";

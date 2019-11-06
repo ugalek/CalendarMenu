@@ -1,0 +1,16 @@
+PODS:
+  - CalendarMenu (0.1.0)
+
+DEPENDENCIES:
+  - CalendarMenu (from `../`)
+
+EXTERNAL SOURCES:
+  CalendarMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CalendarMenu: 74fecd0b68760ee67ff65a7f034a21ca094a7c19
+
+PODFILE CHECKSUM: c1f1e2a7eb3641f40c61c95ddb9b7844b395beaa
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CalendarMenu_Example' do
+  pod 'CalendarMenu', :path => '../'
+
+  target 'CalendarMenu_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
