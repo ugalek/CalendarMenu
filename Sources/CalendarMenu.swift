@@ -30,7 +30,8 @@ open class CalendarMenu: UIControl {
     public var dayOfCalendar: Date? {
         didSet {
             if let day = dayOfCalendar {
-                datePicker.date = day
+               // datePicker.date = day
+                datePicker.setDate(day, animated: true)
             }
         }
     }
@@ -134,13 +135,12 @@ open class CalendarMenu: UIControl {
         return cv
     }()
     
-    private let datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
+    private let datePicker: DayPicker = {
+        let picker = DayPicker(frame: CGRect(origin: CGPoint(x: 0, y: 0),
+                                                   size: CGSize(width: 50, height: 50)))
         picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .date
-        picker.locale = Locale(identifier: Locale.preferredLanguages.first!)
         picker.backgroundColor = .clear
-        
+        picker.layer.masksToBounds = true
         return picker
     }()
     
@@ -215,13 +215,6 @@ open class CalendarMenu: UIControl {
                 dateIntervalLabel.rightAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.rightAnchor, constant: -10),
                 dateIntervalLabel.heightAnchor.constraint(equalToConstant: 25),
             ])
-        } else if #available(iOS 9.0, *) {
-            NSLayoutConstraint.activate([
-                dateIntervalLabel.topAnchor.constraint(equalTo: menuView.topAnchor, constant: 3),
-                dateIntervalLabel.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: 10),
-                dateIntervalLabel.rightAnchor.constraint(equalTo: menuView.rightAnchor, constant: -10),
-                dateIntervalLabel.heightAnchor.constraint(equalToConstant: 25),
-            ])
         } else {
             menuView.addConstraint(NSLayoutConstraint(item: dateIntervalLabel, attribute: .top, relatedBy: .equal, toItem: menuView, attribute: .top, multiplier: 1.0, constant: 3))
             menuView.addConstraint(NSLayoutConstraint(item: dateIntervalLabel, attribute: .left, relatedBy: .equal, toItem: menuView, attribute: .left, multiplier: 1.0, constant: 10))
@@ -235,13 +228,6 @@ open class CalendarMenu: UIControl {
                 segmentedControl.topAnchor.constraint(equalTo: dateIntervalLabel.bottomAnchor, constant: 3),
                 segmentedControl.leftAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.leftAnchor, constant: 10),
                 segmentedControl.rightAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.rightAnchor, constant: -10),
-                segmentedControl.heightAnchor.constraint(equalToConstant: 25),
-            ])
-        } else if #available(iOS 9.0, *) {
-            NSLayoutConstraint.activate([
-                segmentedControl.topAnchor.constraint(equalTo: dateIntervalLabel.bottomAnchor, constant: 3),
-                segmentedControl.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: 10),
-                segmentedControl.rightAnchor.constraint(equalTo: menuView.rightAnchor, constant: -10),
                 segmentedControl.heightAnchor.constraint(equalToConstant: 25),
             ])
         } else {
@@ -259,13 +245,6 @@ open class CalendarMenu: UIControl {
                 containerPickerView.rightAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.rightAnchor, constant: -10),
                 containerPickerView.heightAnchor.constraint(equalToConstant: 90),
             ])
-        } else if #available(iOS 9.0, *) {
-            NSLayoutConstraint.activate([
-                containerPickerView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 3),
-                containerPickerView.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: 10),
-                containerPickerView.rightAnchor.constraint(equalTo: menuView.rightAnchor, constant: -10),
-                containerPickerView.heightAnchor.constraint(equalToConstant: 90),
-            ])
         } else {
             menuView.addConstraint(NSLayoutConstraint(item: containerPickerView, attribute: .top, relatedBy: .equal, toItem: segmentedControl, attribute: .bottom, multiplier: 1.0, constant: 3))
             menuView.addConstraint(NSLayoutConstraint(item: containerPickerView, attribute: .left, relatedBy: .equal, toItem: menuView, attribute: .left, multiplier: 1.0, constant: 10))
@@ -280,12 +259,6 @@ open class CalendarMenu: UIControl {
                 doneButton.leftAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.leftAnchor, constant: UIScreen.main.bounds.size.width / 2),
                 doneButton.rightAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.rightAnchor, constant: -10),
             ])
-        } else if #available(iOS 9.0, *) {
-            NSLayoutConstraint.activate([
-                doneButton.topAnchor.constraint(equalTo: containerPickerView.bottomAnchor, constant: 3),
-                doneButton.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: UIScreen.main.bounds.size.width / 2),
-                doneButton.rightAnchor.constraint(equalTo: menuView.rightAnchor, constant: -10),
-            ])
         } else {
             menuView.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: containerPickerView, attribute: .bottom, multiplier: 1.0, constant: 3))
             menuView.addConstraint(NSLayoutConstraint(item: doneButton, attribute: .left, relatedBy: .equal, toItem: menuView, attribute: .left, multiplier: 1.0, constant: UIScreen.main.bounds.size.width / 2))
@@ -297,12 +270,6 @@ open class CalendarMenu: UIControl {
             NSLayoutConstraint.activate([
                 todayButton.topAnchor.constraint(equalTo: containerPickerView.bottomAnchor, constant: 3),
                 todayButton.leftAnchor.constraint(equalTo: menuView.safeAreaLayoutGuide.leftAnchor, constant: 10),
-                todayButton.rightAnchor.constraint(equalTo: doneButton.leftAnchor, constant: -10),
-            ])
-        } else if #available(iOS 9.0, *) {
-            NSLayoutConstraint.activate([
-                todayButton.topAnchor.constraint(equalTo: containerPickerView.bottomAnchor, constant: 3),
-                todayButton.leftAnchor.constraint(equalTo: menuView.leftAnchor, constant: 10),
                 todayButton.rightAnchor.constraint(equalTo: doneButton.leftAnchor, constant: -10),
             ])
         } else {

@@ -5,7 +5,7 @@
 <a href="https://raw.githubusercontent.com/ugalek/CalendarMenu/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
-**Customizable calendar menu for iOS (10.0 or later), written in Swift 5.**
+**Customizable calendar menu for iOS (13.0 or later), written in Swift 5.**
 
 * UIControl subclass for date / week / month selection
 * I18n / i10n aware
