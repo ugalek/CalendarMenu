@@ -7,7 +7,7 @@
 
 **Customizable calendar menu for iOS (13.0 or later), written in Swift 5.**
 
-Used at my app https://www.rombik.dev/kaniotte/
+Used at my app [Kaniotte](https://www.rombik.dev/kaniotte/)
 
 * UIControl subclass for date / week / month selection
 * I18n / i10n aware
